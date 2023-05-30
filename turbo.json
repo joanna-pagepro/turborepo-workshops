@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {},
+    "dev": {
+      "cache": false
+    },
+    "start": {
+      "cache": false
+    },
+    "@workshops/docs#build": {
+      "dependsOn": ["@workshops/ui#build"],
+      "outputs": ["storybook-static/**"]
+    },
+    "@workshops/site#build": {
+      "dependsOn": ["@workshops/ui#build"],
+      "outputs": [
+        ".next/**"
+      ]
+    },
+    "@workshops/ui#build": {
+      "outputs": ["lib/**"],
+      "inputs": ["src/**"]
+    }
+  }
+}

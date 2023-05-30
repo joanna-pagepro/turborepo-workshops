@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "app:site": "yarn workspace @workshops/web",
+    "app:ui": "yarn workspace @workshops/ui",
+    "app:docs": "yarn workspace @workshops/docs"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "postcss": "^8.4.24",
+    "prettier": "^2.5.1",
+    "tailwind": "^4.0.0",
+    "turbo": "^1.9.7"
+  },
+  "name": "my-turborepo",
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4"
+  },
+  "packageManager": "yarn@1.22.17",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
