@@ -1,10 +1,11 @@
 import Button from "@workshops/ui/lib/atoms/Button"
 
-export default function Page() {
+const Page: React.FC = () => {
   return (
     <div>
-      <Button />
-      test
+      <Button>test button</Button>
     </div>
   );
 }
+
+export default Page;
